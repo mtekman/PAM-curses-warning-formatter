@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+build: build-stamp
+build-stamp:
+	$(MAKE)
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	-$(MAKE) clean
+	rm -f build-stamp install-stamp
+	dh_clean
+
+install: install-stamp
+install-stamp:
+	dh_testdir
+	dh_testroot
+	dh_clean
+	dh_installdirs lib/security
+	$(MAKE) DESTDIR=$(CURDIR)/debian/libpam-script install
+	touch install-stamp
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs CREDITS README
+	dh_installexamples
+	dh_installman pam_script.5
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-arch binary-indep
+
+.PHONY: binary clean build binary-arch binary-indep install

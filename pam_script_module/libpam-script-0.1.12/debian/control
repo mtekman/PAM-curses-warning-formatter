@@ -1,0 +1,15 @@
+Source: libpam-script
+Section: admin
+Priority: optional
+Maintainer: Izak Burger <isburger@gmail.com>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>=4.0), libpam0g-dev
+
+Package: libpam-script
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: A PAM module that allows for script execution on session events
+ The libpam-script package provides a Pluggable Authentication Module for Linux.
+ pam_script.so is a Pluggable Authentication Module for Linux (Linux-PAM).
+ It allows script execution at session open time and/or session close time.
+ It can also handle authentication management and allow access based scripts.

@@ -1,0 +1,131 @@
+libpam-script (0.1.12) unstable; urgency=low
+
+  * Fix bug in setuid code.
+  * Rewrote option parsing code
+  * Add initgroups option
+
+ -- Izak Burger <isburger@gmail.com>  Thu, 03 Jul 2008 22:28:02 +0200
+
+libpam-script (0.1.11) unstable; urgency=low
+
+  * Changed upstream Makefile to use install
+  * Fixed Standard-Version
+  * Updated package description
+  * Minor code restructure
+  * Added option to expose $HOME
+  * Added option to expose PAM_USER token
+
+ -- Izak Burger <isburger@gmail.com>  Tue, 31 Jul 2007 21:33:40 +0200
+
+libpam-script (0.1.10) unstable; urgency=low
+
+  * Updated README
+  * Updated examples
+  * Added missing syslog.h include
+
+ -- Izak Burger <isburger@gmail.com>  Thu, 19 Oct 2006 23:16:14 +0200
+
+libpam-script (0.1.9) unstable; urgency=low
+
+  * Added PAM_RHOST to the list of values that can be exposed
+
+ -- Izak Burger <isburger@gmail.com>  Tue, 25 Jul 2006 23:02:01 +0200
+
+libpam-script (0.1.8) unstable; urgency=low
+
+  * Debian policy changes
+  * manpage formatting corrected
+
+ -- Izak Burger <isburger@gmail.com>  Wed, 21 Jun 2006 21:14:39 +0200
+
+libpam-script (0.1.7) unstable; urgency=high
+
+  * Fixed session handling problem
+  * Always restore signal handler
+
+ -- Izak Burger <isburger@gmail.com>  Tue, 17 Jan 2006 08:44:13 +0200
+
+libpam-script (0.1.6) unstable; urgency=low
+
+  * Prompt for password when used as an auth module and none has been set
+
+ -- Izak Burger <isburger@gmail.com>  Tue, 18 Oct 2005 23:18:47 +0200
+
+libpam-script (0.1.5) unstable; urgency=low
+
+  * Code cleanup
+  * Fixups for pam_sm_setcred
+  * Optionally expose PAM_AUTHTOK and KRB5CCNAME to the script environment
+
+ -- Izak Burger <isburger@gmail.com>  Fri, 30 Sep 2005 00:24:11 +0200
+
+libpam-script (0.1.4) unstable; urgency=low
+
+  * Added support to use pam_script as an auth module
+
+ -- Izak Burger <isburger@gmail.com>  Sun, 14 Aug 2005 18:17:03 +0200
+
+libpam-script (0.1.3) unstable; urgency=low
+
+  * debian build files updated
+  * kde example updated
+  * Mask SIGCHILD while executing the script
+  * loop if waitpid returns EINTR
+  * Log error message if unable to change to the requested user
+
+ -- Izak Burger <isburger@gmail.com>  Mon,  8 Aug 2005 22:37:18 +0200
+
+libpam-script (0.1.2) unstable; urgency=low
+
+  * Wrong username passed to script; fixed
+  * Drop privileges after forking
+  * Service name passed to script as second parameter
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Mon,  6 Oct 2003 10:56:36 +0200
+
+libpam-script (0.1.1) unstable; urgency=low
+
+  * Documentation updated
+  * Added manpage
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Mon, 29 Sep 2003 12:19:10 +0200
+
+libpam-script (0.1) unstable; urgency=low
+
+  * Rewrite by Jacob Rief <jacob.rief@tiscover.com>
+  * added sessionopen scripts
+  * added feature to execute script using given user
+  * written a spec-file
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Mon, 29 Sep 2003 12:19:10 +0200
+
+libpam-script (0.0.5) unstable; urgency=low
+
+  * option to specify a different cleanup script
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Thu, 14 Mar 2002 07:12:00 +0200
+
+libpam-script (0.0.4) unstable; urgency=low
+
+  * /etc/cleanup.sh replaced with /etc/security/pam_script
+  * Added example
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Fri, 01 Mar 2002 09:40:00 +0200
+
+libpam-script (0.0.3) unstable; urgency=low
+
+  * Pass username as parameter to cleanup script
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Fri, 01 Mar 2002 09:40:00 +0200
+
+libpam-script (0.0.2) unstable; urgency=low
+
+  * Return value of system() affects return value of pam_sm_close_session
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Fri, 01 Mar 2002 09:40:00 +0200
+
+libpam-script (0.0.1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Izak Burger <iburger@cs.sun.ac.za>  Fri, 01 Mar 2002 09:40:00 +0200

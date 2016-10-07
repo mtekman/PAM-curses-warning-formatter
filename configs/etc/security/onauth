@@ -1,0 +1,39 @@
+#!/bin/sh
+
+#message="TEST $PAM_SERVICE $PAM_TYPE $PAM_TTY"
+#tmp=/tmp/test
+#
+
+# Find the file descriptor
+# --- Not working, assume login tty1
+#pts=`lsof | grep -P "login\s.*/dev/pts" | awk '{print $NF}'| uniq`
+
+pts=/dev/tty1
+
+
+# prime tally
+tally=/tmp/tally
+! [ -e $tally ] && echo 0 > $tally;
+
+
+# Increment tally
+attempt=$(( `cat $tally` + 1 ))
+echo $attempt > $tally
+
+
+if [ $attempt = 1 ]; then
+   echo -e "\nNope. Try again.\n" >> $pts;
+   exit 0;
+
+elif [ $attempt = 2]; then
+   echo -e "\nStill wrong. Try again...\n" >> $pts;
+   exit 0;
+
+elif [ $attempt = 3 ]; then
+   echo -e "\n...still wrong. Final warning.\n The consequences will be dire if you proceed, I shit you not.\n" >> $pts;
+   exit 0;
+fi
+
+
+rm $tally
+openvt -c 9 /etc/security/warner && chvt 9;

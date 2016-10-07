@@ -1,0 +1,73 @@
+.TH "pam_script" "5" "02 April 2007"
+.\" NAME should be all caps, SECTION should be 1-8, maybe w/ subsection
+.\" other parms are allowed: see man(7), man(1)
+.SH NAME
+pam_script \- A PAM module that runs a script at the start or end of a session
+.SH SYNOPSIS
+.B session  required pam-script.so
+.I "[options]"
+.br
+.B auth     required pam-script.so
+.I "[options]"
+.br
+.SH "DESCRIPTION"
+This manual page briefly documents the
+.BR pam-script
+PAM.
+.PP
+.B pam-script.so
+is a pam module that implements session management.  It optionally runs a
+session open script (/etc/security/onsessionopen), a session close script
+(/etc/security/onsessionclose) or an authentication script
+(/etc/security/onauth) if they exist. Alternatively any other script can be
+executed using the options onsessionopen=/path/to/script,
+onsessionclose=/path/to/script and onauth=/path/to/script.
+.SH OPTIONS
+.br
+.B runas=username
+.br
+Run onsessionopen and onsessionclose as the specified user
+.I username
+
+.B onsessionopen=path
+.br
+Run
+.I path
+instead of /etc/security/onsessionopen
+
+.B onsessionclose=path
+.br
+Run
+.I path
+instead of /etc/security/onsessionclose
+
+.B expose=authtok
+.br
+Make the user password available in the PAM_AUTHTOK environment variable. Note that
+this option may be dangerous as it exposes privileged information.
+
+.B expose=krb5ccname
+.br
+Make the kerberos ticket cache location available in the KRB5CCNAME environment
+variable.
+
+.B expose=rhost
+.br
+Make the value of PAM_RHOST available in the PAM_RHOST environment variable.
+
+.B expose=user
+.br
+Make the value of PAM_USER available in the PAM_USER environment variable.
+
+.B expose=home
+.br
+Set the HOME environment variable.
+
+.B initgroups=1
+.br
+Call initgroups(3) to configure any additional group memberships. Without this option
+only the primary group is set.
+
+.SH AUTHOR
+This manual page was written by Izak Burger <isburger@gmail.com>,
+for the Debian GNU/Linux system (but may be used by others).

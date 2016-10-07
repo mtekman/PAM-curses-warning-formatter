@@ -1,0 +1,13 @@
+This package was debianized by Izak Burger isburger@gmail.com on
+Mon, 29 Sep 2003 12:19:10 +0200.
+
+It was downloaded from http://www.cs.sun.ac.za/~iburger
+
+Copyright:
+
+pam-script is copyright 2002, 2003, 2005 Izak Burger and others.
+
+pam_script is licened under the terms of the GNU General Public License (GPL),
+version 2.0 or later, as published by the Free Software Foundation.  See
+/usr/share/common-licenses/GPL, or <http://www.gnu.org/copyleft/gpl.txt> for
+the terms of the latest version of the GNU General Public License.
