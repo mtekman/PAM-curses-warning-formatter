@@ -1,3 +1,4 @@
 warner/warner
 configs/etc/security/warner
 *.o
+*.so
