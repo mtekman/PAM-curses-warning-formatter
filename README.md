@@ -6,7 +6,7 @@ An interactive curses application that threatens to format your disks upon the t
 
 #### Configure
 
-Change `messages.txt` to your own custom messages prompted at each incorrect login attempt. Emphasis is given by surrounding words in brackets, and newlines are inserted at each adjacent string.
+Edit *custom_fail_messages.txt* to your own preferred text produced in order of each incorrect login attempt. Emphasis is given by surrounding words in brackets, and newlines are inserted at each adjacent string.
 
  e.g   "[This] is" "YOUR FINAL WARNING" "BURN ALL YOUR [CLASSIFIED DOCUMENTS]"  
 
@@ -22,15 +22,15 @@ will resolve to:
 
 Run `install.sh`
 
-which calls *buildInstallPamScript.sh* and *buildWarner.sh*, then copies all configs over to root directories.
+which calls *scripts/{buildInstallPamScript.sh, buildWarner.sh, buildOnAuth.sh}*, then copies all configs over to root directories.
 
 ***Specifically:***
 
  * `buildInstallPamScript.sh` builds and copies pam_script.so into */lib/security/*
 
-and
-
- * `buildWarner.sh` builds and copies the interactive warner into *configs/etc/security/*
+ * `buildWarner.sh` builds and copies the interactive warner to *configs/etc/security/warner*
+ 
+ * `buildOnAuth.sh` generates and inserts custom messages into *configs/etc/security/onauth*
 
 
 ### Run:
