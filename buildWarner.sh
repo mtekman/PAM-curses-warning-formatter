@@ -1,5 +1,5 @@
 #1/bin/bash
-cd warner
+cd src/warner
 gcc curses_warner.c -lncurses -o warner
-cd ..
-cp warner/warner configs/etc/security/
+cd - 2>&1 >/dev/null
+cp src/warner/warner configs/etc/security/
