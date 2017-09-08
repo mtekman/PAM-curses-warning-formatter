@@ -1,0 +1,10 @@
+# Note:
+#   - Only three messages are allowed, and MUST start with either 'message' and be prepended by a number '1' '2' or '3'
+#   - Bold text is indicated by [brackets]
+#   - Each "individual string" is printed on a seperate line
+
+message1 "Nope. Try again."
+
+message2 "Still wrong." "Starting to lose my patience..."
+
+message3 "Extremely wrong!" "THIS IS YOUR [FINAL WARNING]:" "The consequences will be [FUCKING DIRE] if you proceed, I kid you not."
