@@ -1,14 +1,14 @@
 #%PAM-1.0
 
-auth       required   pam_tally2.so         onerr=succeed file=/var/log/faillog
+auth       required   pam_tally2.so         onerr=fail file=/var/log/faillog
 auth       required   pam_shells.so
 auth       requisite  pam_nologin.so
-#auth include system-auth
-# Copied from system-auth
-auth      [maxtries=4 success=2 default=ignore]  pam_unix.so  try_first_pass nullok
+#% auth include system-auth
+#% Copied from system-auth
+auth      [maxtries=10 success=2 default=ignore]  pam_unix.so  try_first_pass nullok
 auth      required   pam_script.so      runas=root
 auth      requisite  pam_deny.so
-auth      optional   pam_permit.so
+#% auth      optional   pam_permit.so
 auth      required   pam_env.so
 
 
