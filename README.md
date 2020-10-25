@@ -1,3 +1,10 @@
+### This repo has migrated to GitLab
+https://gitlab.com/mtekman/PAM-curses-warning-formatter
+###### (The copy here is archived. Please see the above link for the latest developments)
+
+
+
+
 # PAM Curses Warner
 
 An interactive curses application that threatens to format your disks upon the three failed login attempts at boot via [PAM](https://en.wikipedia.org/wiki/Pluggable_authentication_module), complete with customizable fail messages.
